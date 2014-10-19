@@ -99,6 +99,19 @@ This is really useful in a number of situations:
 1. A container can register configuration parameters for an application---for example, a port---and allows them to be changed later
 2. Dependencies can be replaced with mock objects in order to test other dependencies
 
+To resolve the updated dependencies, provide an empty override:
+
+```js
+container.resolve({}, function (song) {
+  /*
+   * I'm a cowboy
+   * On a wood-paneled station wagon I ride
+   * And I'm wanted: dead or alive
+   */
+  console.log(song.chorus());
+});
+```
+
 ### Override dependencies at resolve time
 
 It's also possible to override dependencies at resolve time:
